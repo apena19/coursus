@@ -30,9 +30,7 @@ public class UserActivity extends AppCompatActivity implements AdaptadorUsuario.
 
 
         list_usuarios = findViewById(R.id.lstUsuarios);
-        usuarios = new ArrayList<Usuario>();
-        usuarios.add(new Usuario("1143425645","Carlos","Perez", "3023175988", R.drawable.images ));
-        usuarios.add(new Usuario("527628282","jairo","ffontalvo", "6276818", R.drawable.images2 ));
+        usuarios = Data.obtenerU();
 
         adaptador = new AdaptadorUsuario(usuarios, this);
         llm = new LinearLayoutManager(this);
@@ -45,12 +43,15 @@ public class UserActivity extends AppCompatActivity implements AdaptadorUsuario.
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent;
+                intent = new Intent(UserActivity.this, AgregarUsuario.class);
+                startActivity(intent);
+                finish();
             }
         });
 
     }
+
 
     @Override
     public void onUsuarioClick(Usuario u) {

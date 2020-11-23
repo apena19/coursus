@@ -34,6 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_delete"
+            android:onClick="eliminarUser"
             fab:fab_label="cambiar"
             fab:fab_size="mini" />
 
@@ -45,7 +46,7 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/lblTituloDetalle"
+            android:id="@+id/lblTituloDetalleU"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/detalle_usuario"

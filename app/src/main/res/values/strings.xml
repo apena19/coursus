@@ -20,4 +20,13 @@
     <string name="lbl_apellido">Apellido</string>
     <string name="lbl_cedula">Cedula</string>
     <string name="lbl_celular">Celular</string>
+    <string name="lbl_titulo_agregar_user">Crear Nuevo Usuario</string>
+    <string name="lbl_guardar">Guardar</string>
+    <string name="lbl_limpiar">Limpiar</string>
+    <string name="lbl_Cancelar" >Cancelar</string>
+    <string name="mensaje_correcto" >Elemento Guardado Correctamente</string>
+    <string name="titulo_eliminar_usuario">Eliminar usuario</string>
+    <string name="mensaje_eliminr_user">Esta Seguro de eliminar este usuario ?</string>
+    <string name="opcion_si">Si</string>
+    <string name="opcion_no">No</string>
 </resources>

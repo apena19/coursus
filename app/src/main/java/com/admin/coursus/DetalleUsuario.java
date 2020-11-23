@@ -1,11 +1,13 @@
 package com.admin.coursus;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -52,6 +54,34 @@ public class DetalleUsuario extends AppCompatActivity {
 
         u = new Usuario(ced, nom, apell, cel,fot);
 
+
+    }
+    public void eliminarUser(View v){
+        String positivo, negativo;
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle(R.string.titulo_eliminar_usuario);
+        builder.setMessage(R.string.mensaje_eliminr_user);
+        positivo = getString(R.string.opcion_si);
+        negativo = getString(R.string.opcion_no);
+
+        builder.setPositiveButton(positivo, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                u.eliminar();
+                onBackPressed();
+            }
+        });
+
+        builder.setNegativeButton(negativo, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+
+            }
+        });
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
 
     }
     public void onBackPressed(){

@@ -55,6 +55,11 @@ public class Usuario {
         this.foto = foto;
     }
 
-
+    public void guardar(){
+        Data.guardarU(this);
+    }
+    public void eliminar() {
+        Data.eliminarU(this);
+    }
 
 }
