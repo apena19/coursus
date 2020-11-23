@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalleUsuario">
+    tools:context=".DetalleCurso">
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/menuFab"
@@ -34,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@android:drawable/ic_menu_delete"
-            android:onClick="eliminarUser"
+
             fab:fab_label="cambiar"
             fab:fab_size="mini" />
 
@@ -49,15 +49,15 @@
             android:id="@+id/lblTituloDetalleC"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/detalle_usuario"
+            android:text="@string/detalle_curso"
             android:textAlignment="center"
             android:textSize="24sp"
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imgFotoDetalleU"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:id="@+id/imgFotoDetalleC"
+            android:layout_width="196dp"
+            android:layout_height="163dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15sp"
             app:srcCompat="@drawable/images" />
@@ -70,35 +70,12 @@
             android:stretchColumns="*">
 
             <TableRow
-                android:id="@+id/filaCedula"
+                android:id="@+id/filaNombreC"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/lblTituloCedula"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center_horizontal"
-                    android:text="@string/lbl_cedula"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-
-                <TextView
-                    android:id="@+id/lblCedulaDetalle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAlignment="center"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-            </TableRow>
-
-            <TableRow
-                android:id="@+id/filaNombre"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/lblTituloNombre"
+                    android:id="@+id/lblTituloNombreC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/lbl_nombre"
@@ -108,7 +85,7 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/lblNombreDetalle"
+                    android:id="@+id/lblNombreDetalleC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -117,21 +94,21 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/filaApellido"
+                android:id="@+id/filaCategoria"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/lblTituloApelido"
+                    android:id="@+id/lblTituloCategoria"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lbl_apellido"
+                    android:text="@string/lbl_categoria"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/lblApellidoDetalle"
+                    android:id="@+id/lblCategoriaDetalleC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"
@@ -140,21 +117,21 @@
             </TableRow>
 
             <TableRow
-                android:id="@+id/filaCelular"
+                android:id="@+id/filaDuracion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/lblTituloCelular"
+                    android:id="@+id/lblTituloDuracion"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/lbl_celular"
+                    android:text="@string/lbl_duracion"
                     android:textAlignment="center"
                     android:textSize="18sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/lblCelularDetalle"
+                    android:id="@+id/lblDuracionDetalleC"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAlignment="center"

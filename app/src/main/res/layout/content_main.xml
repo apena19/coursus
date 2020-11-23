@@ -38,6 +38,7 @@
         android:layout_width="225dp"
         android:layout_height="60dp"
         android:layout_marginTop="64dp"
+        android:onClick="flowCursos"
         android:text="@string/btn_panel_cursos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.489"

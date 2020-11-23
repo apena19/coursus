@@ -46,4 +46,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void flowCursos(View v){
+        Intent intent;
+        intent = new Intent(MainActivity.this, CursoActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AgregarUsuario"></activity>
+        <activity android:name=".AgregarCurso"></activity>
+        <activity
+            android:name=".DetalleCurso"
+            android:label="@string/title_activity_detalle_curso"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".CursoActivity"
+            android:label="@string/title_activity_curso"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AgregarUsuario" />
         <activity
             android:name=".DetalleUsuario"
             android:label="@string/title_activity_detalle_usuario"
