@@ -13,4 +13,11 @@
     <string name="btn_panel_user">Administrar Usuarios</string>
     <string name="btn_panel_cursos">Administrar Cursos</string>
     <string name="btn_asignar_curso">Asignar Cursos</string>
+    <string name="title_activity_user_activitay">UserActivitay</string>
+    <string name="title_activity_detalle_usuario">Detalle_usuario</string>
+    <string name="detalle_usuario">Detalle Del Usuario</string>
+    <string name="lbl_nombre">Nombre</string>
+    <string name="lbl_apellido">Apellido</string>
+    <string name="lbl_cedula">Cedula</string>
+    <string name="lbl_celular">Celular</string>
 </resources>
