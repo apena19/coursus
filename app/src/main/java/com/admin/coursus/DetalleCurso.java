@@ -43,13 +43,11 @@ public class DetalleCurso extends AppCompatActivity {
         nom = bundle.getString("nombre");
         cat = bundle.getString("categoria");
         dur = bundle.getString("duracion");
+        id_curso = bundle.getString("id_curso");
         featured_photo.setImageResource(fot);
         nombre.setText(nom);
         categoria.setText(cat);
         duracion.setText(dur);
-        Random r = new Random();
-        id_curso = Integer.toString( r.nextInt(56835) );
-
         c = new Curso(id_curso , nom, cat, dur, fot);
 
     }

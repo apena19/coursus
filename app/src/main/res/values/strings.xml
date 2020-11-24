@@ -34,4 +34,9 @@
     <string name="detalle_curso">Detalle Curso</string>
     <string name="lbl_categoria">Categoria</string>
     <string name="lbl_duracion">Duracion</string>
+    <string name="lbl_titulo_agregar_curso">Crear Nuevo Curso</string>
+    <string name="categoria_desarrollo">Desarrollo De Software</string>
+    <string name="categoria_diseno">Diseño Web</string>
+    <string name="categoria_contabilidad">Contabilidad</string>
+    <string name="categoria_ingles">Ingles</string>
 </resources>

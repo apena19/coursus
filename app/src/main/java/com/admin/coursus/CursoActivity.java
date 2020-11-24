@@ -28,13 +28,7 @@ public class CursoActivity extends AppCompatActivity implements AdaptadorCurso.O
         setSupportActionBar(toolbar);
 
         list_cursos = findViewById(R.id.lstCursos);
-        //cursos = Data.obtenerC();
-
-        cursos = new ArrayList<Curso>();
-		cursos.add(new Curso("6737","Carlos","10 min", "PHP",R.drawable.images ));
-        cursos.add(new Curso("22929","Carlos","10 horas","Economia",R.drawable.images2 ));
-        cursos.add(new Curso("222","Carlos","48 dias","java",R.drawable.images3 ));
-
+        cursos = Data.obtenerC();
         adaptador = new AdaptadorCurso(cursos, this);
 
         llm = new LinearLayoutManager(this);
@@ -48,22 +42,25 @@ public class CursoActivity extends AppCompatActivity implements AdaptadorCurso.O
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Intent intent;
+                intent = new Intent(CursoActivity.this, AgregarCurso.class);
+                startActivity(intent);
+                finish();
             }
         });
 
     }
-    public void onCursoClick(Curso u) {
+    public void onCursoClick(Curso c) {
         Intent intent;
         Bundle bundle;
 
         bundle = new Bundle();
 
-        bundle.putInt("featured_photo",u.getFeatured_photo());
-        bundle.putString("nombre",u.getNombre());
-        bundle.putString("categoria", u.getCategoria());
-        bundle.putString("duracion", u.getDuracion());
+        bundle.putInt("featured_photo",c.getFeatured_photo());
+        bundle.putString("nombre",c.getNombre());
+        bundle.putString("categoria", c.getCategoria());
+        bundle.putString("duracion", c.getDuracion());
+        bundle.putString("id_curso", c.getId());
 
         intent = new Intent(CursoActivity.this, DetalleCurso.class);
         intent.putExtra("datos",bundle);

@@ -55,4 +55,7 @@ public class Curso {
     public void setFeatured_photo(int featured_photo) {
         this.featured_photo = featured_photo;
     }
+    public void guardar(){
+        Data.guardarC(this);
+    }
 }

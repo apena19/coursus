@@ -21,14 +21,16 @@ public class AgregarUsuario extends AppCompatActivity {
         setContentView(R.layout.agregar_usuario);
 
         cedula = findViewById(R.id.txtCedula);
-        nombre = findViewById(R.id.txtNombre);
+        nombre = findViewById(R.id.txtNombreCurso);
         apellido = findViewById(R.id.txtApellido);
-        celular = findViewById(R.id.txtCelular);
+        celular = findViewById(R.id.txtDuracion);
 
         fotos = new ArrayList<>();
-        fotos.add(R.drawable.images);
-        fotos.add(R.drawable.images2);
-        fotos.add(R.drawable.images3);
+        fotos.add(R.drawable.persona);
+        fotos.add(R.drawable.persona1);
+        fotos.add(R.drawable.persona2);
+        fotos.add(R.drawable.persona3);
+        fotos.add(R.drawable.persona4);
     }
     public void guardar(View v){
         String ced, nom, apell, cel;
