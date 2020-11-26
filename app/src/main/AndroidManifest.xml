@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AgregarCurso"></activity>
+        <activity android:name=".AgregarCompras"></activity>
+        <activity android:name=".AgregarCurso" />
         <activity
             android:name=".DetalleCurso"
             android:label="@string/title_activity_detalle_curso"

@@ -67,4 +67,10 @@ public class CursoActivity extends AppCompatActivity implements AdaptadorCurso.O
         startActivity(intent);
 
     }
+    public void onBackPressed(){
+        finish();
+        Intent intent = new Intent(CursoActivity.this, MainActivity.class);
+        startActivity(intent);
+
+    }
 }

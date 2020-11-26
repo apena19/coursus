@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:hint="@string/lbl_celular"
-        android:inputType="textPersonName" />
+        android:inputType="number" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -74,6 +74,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@android:color/holo_blue_bright"
             android:onClick="limpiar"
             android:text="@string/lbl_limpiar" />
 
@@ -83,6 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:backgroundTint="@color/design_default_color_error"
             android:onClick="Cancelar"
             android:text="@string/lbl_Cancelar" />
     </LinearLayout>

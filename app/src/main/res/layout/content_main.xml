@@ -50,6 +50,7 @@
         android:layout_width="225dp"
         android:layout_height="60dp"
         android:layout_marginTop="60dp"
+        android:onClick="flowCompra"
         android:text="@string/btn_asignar_curso"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.511"

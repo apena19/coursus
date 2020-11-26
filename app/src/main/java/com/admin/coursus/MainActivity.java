@@ -52,4 +52,10 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
         finish();
     }
+    public void flowCompra(View v){
+        Intent intent;
+        intent = new Intent(MainActivity.this, AgregarCompras.class);
+        startActivity(intent);
+        finish();
+    }
 }

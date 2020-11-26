@@ -34,4 +34,8 @@ public class Compra {
     public void setId_curso(String id_curso) {
         this.id_curso = id_curso;
     }
+
+    public void guardar(){
+        Data.guardarCp(this);
+    }
 }
