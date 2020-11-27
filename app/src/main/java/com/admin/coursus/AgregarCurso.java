@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -48,11 +49,32 @@ public class AgregarCurso extends AppCompatActivity {
         featured_photo = foto_aleatoriaC();
         Random r = new Random();
         id_curso = Integer.toString( r.nextInt(56835) );
-        curso = new Curso(id_curso, nom, dur, cate, featured_photo);
-        curso.guardar();
-        limpiar();
-        Snackbar.make(v, R.string.mensaje_correcto, Snackbar.LENGTH_LONG).show();
+        if(validar()) {
+            curso = new Curso(id_curso, nom, dur, cate, featured_photo);
+            curso.guardar();
+            limpiar();
+            Snackbar.make(v, R.string.mensaje_correcto, Snackbar.LENGTH_LONG).show();
+        }
 
+    }
+    public boolean validar(){
+
+        if(nombre.getText().toString().isEmpty()){
+            nombre.setError(getString(R.string.error));
+            nombre.requestFocus();
+            return  false;
+        }
+        if(duracion.getText().toString().isEmpty()){
+            duracion.setError(getString(R.string.error));
+            duracion.requestFocus();
+            return  false;
+        }
+        if(RevisarCategorias().isEmpty()){
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_LONG).show();
+            return  false;
+        }
+
+        return true;
     }
     public String RevisarCategorias(){
         String cat = categorias;

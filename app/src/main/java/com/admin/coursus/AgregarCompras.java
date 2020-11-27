@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -21,6 +22,7 @@ public class AgregarCompras extends AppCompatActivity {
     private ArrayList<Curso> cursos;
     private String[] listStringCursos;
     private String stringArrayTemp ;
+    private ArrayList<Usuario> usuarios ;
 
 
     @Override
@@ -44,19 +46,47 @@ public class AgregarCompras extends AppCompatActivity {
         CursosLista.setAdapter(adapter);
     }
     public void guardar(View v){
-        String  cedu, id_compra, id_curso;
-        int pos_curso_lista;
-        Compra compra;
-        cedu = ced_user_compra.getText().toString();
-        Random r = new Random();
-        id_compra = Integer.toString( r.nextInt(682892972) );
-        pos_curso_lista = CursosLista.getSelectedItemPosition();
-        id_curso = BuscarIdCurso(pos_curso_lista);
-        compra = new Compra(id_compra, cedu, id_curso);
-        compra.guardar();
-        limpiar();
-        Snackbar.make(v, R.string.mensaje_correcto, Snackbar.LENGTH_LONG).show();
+        if(validar()) {
+            String  cedu, id_compra, id_curso;
+            int pos_curso_lista;
+            Compra compra;
+            cedu = ced_user_compra.getText().toString();
+            Random r = new Random();
+            id_compra = Integer.toString( r.nextInt(682892972) );
+            pos_curso_lista = CursosLista.getSelectedItemPosition();
+            id_curso = BuscarIdCurso(pos_curso_lista);
+            compra = new Compra(id_compra, cedu, id_curso);
+            compra.guardar();
+            limpiar();
+            Snackbar.make(v, R.string.mensaje_correcto, Snackbar.LENGTH_LONG).show();
+        }
     }
+
+    public boolean validar(){
+        if(ced_user_compra.getText().toString().isEmpty()){
+            ced_user_compra.setError(getString(R.string.error));
+            ced_user_compra.requestFocus();
+            return  false;
+        }
+        usuarios = Data.obtenerU();
+        boolean existe = false;
+        String id_u = ced_user_compra.getText().toString();
+        for (int i=0; i<usuarios.size(); i++) {
+            if(id_u.equals(usuarios.get(i).getCedula())){
+                existe = true;
+            }
+        }
+        if(!existe){
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_LONG).show();
+            return false;
+        }
+        if( CursosLista.getSelectedItemPosition() == 0){
+            Toast.makeText(this, getString(R.string.error), Toast.LENGTH_LONG).show();
+            return false;
+        }
+        return true;
+    }
+
     public String BuscarIdCurso(int pos){
         return  cursos.get(pos-1).getId();
     }

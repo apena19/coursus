@@ -33,4 +33,5 @@
     <string name="categoria_ingles">Ingles</string>
     <string name="lbl_titulo_comprar">Tienda de Cursos</string>
     <string name="seleccionDefould">Seleccione un curso</string>
+    <string name="error">Campo Obligatorio</string>
 </resources>

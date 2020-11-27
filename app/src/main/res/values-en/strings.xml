@@ -34,4 +34,5 @@
     <string name="categoria_ingles">English</string>
     <string name="lbl_titulo_comprar">Course Store</string>
     <string name="seleccionDefould">Select a course</string>
+    <string name="error">Required</string>
 </resources>

@@ -41,11 +41,36 @@ public class AgregarUsuario extends AppCompatActivity {
         apell = apellido.getText().toString();
         cel = celular.getText().toString();
         foto = foto_aleatoria();
-        user = new Usuario(ced, nom, apell, cel, foto);
-        user.guardar();
-        limpiar();
-        Snackbar.make(v, R.string.mensaje_correcto, Snackbar.LENGTH_LONG).show();
+        if(validar()) {
+            user = new Usuario(ced, nom, apell, cel, foto);
+            user.guardar();
+            limpiar();
+            Snackbar.make(v, R.string.mensaje_correcto, Snackbar.LENGTH_LONG).show();
+        }
+    }
+    public boolean validar(){
 
+        if(cedula.getText().toString().isEmpty()){
+            cedula.setError(getString(R.string.error));
+            cedula.requestFocus();
+            return  false;
+        }
+        if(nombre.getText().toString().isEmpty()){
+            nombre.setError(getString(R.string.error));
+            nombre.requestFocus();
+            return  false;
+        }
+        if(apellido.getText().toString().isEmpty()){
+            apellido.setError(getString(R.string.error));
+            apellido.requestFocus();
+            return  false;
+        }
+        if(celular.getText().toString().isEmpty()){
+            celular.setError(getString(R.string.error));
+            celular.requestFocus();
+            return  false;
+        }
+        return true;
     }
     public int foto_aleatoria(){
         int id_foto_seleccionada;
