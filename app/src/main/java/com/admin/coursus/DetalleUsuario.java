@@ -10,17 +10,28 @@ import com.google.android.material.snackbar.Snackbar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class DetalleUsuario extends AppCompatActivity {
+import java.util.ArrayList;
+
+public class DetalleUsuario extends AppCompatActivity implements AdaptadorCurso.OnCursoClickListener {
     private ImageView foto;
     private TextView cedula, nombre, apellido, celular;
     private Intent intent;
     private Bundle bundle;
     private Usuario u;
+    private ArrayList<Curso> cursos;
+    private ArrayList<Compra> compras;
+    private ArrayList<Curso> cursosUsuario = new ArrayList() ;
+    private RecyclerView list_cursos_user;
+    private AdaptadorCurso adaptador;
+    private LinearLayoutManager llm;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +45,7 @@ public class DetalleUsuario extends AppCompatActivity {
         nombre = findViewById(R.id.lblNombreDetalle);
         apellido = findViewById(R.id.lblApellidoDetalle);
         celular = findViewById(R.id.lblCelularDetalle);
+
 
         intent = getIntent();
         bundle = intent.getBundleExtra("datos");
@@ -53,6 +65,31 @@ public class DetalleUsuario extends AppCompatActivity {
         celular.setText(cel);
 
         u = new Usuario(ced, nom, apell, cel,fot);
+
+        cursos = Data.obtenerC();
+        compras = Data.obtenerCp();
+        String id_curso_temp;
+        for (int i = 0; i < compras.size(); i++) {
+            if(compras.get(i).getCedula_User().equals(ced)){
+                id_curso_temp = compras.get(i).getId_curso();
+                for (int j = 0; j < cursos.size();j++) {
+                    if(cursos.get(i).getId().equals(id_curso_temp)){
+                        cursosUsuario.add(cursos.get(j));
+                        Log.i("cursoG:", cursos.get(j).getId());
+                        Log.i("cursoG:", cursosUsuario.get(j).getId() );
+                    }
+                }
+            }
+        }
+
+        list_cursos_user = findViewById(R.id.listCursosUser);
+
+        adaptador = new AdaptadorCurso(cursosUsuario, this);
+        llm = new LinearLayoutManager(this);
+        llm.setOrientation(RecyclerView.VERTICAL);
+
+        list_cursos_user.setLayoutManager(llm);
+        list_cursos_user.setAdapter(adaptador);
 
 
     }
@@ -82,6 +119,23 @@ public class DetalleUsuario extends AppCompatActivity {
 
         AlertDialog dialog = builder.create();
         dialog.show();
+
+    }
+    public void onCursoClick(Curso c) {
+        Intent intent;
+        Bundle bundle;
+
+        bundle = new Bundle();
+
+        bundle.putInt("featured_photo",c.getFeatured_photo());
+        bundle.putString("nombre",c.getNombre());
+        bundle.putString("categoria", c.getCategoria());
+        bundle.putString("duracion", c.getDuracion());
+        bundle.putString("id_curso", c.getId());
+
+        intent = new Intent(DetalleUsuario.this, DetalleCurso.class);
+        intent.putExtra("datos",bundle);
+        startActivity(intent);
 
     }
     public void onBackPressed(){

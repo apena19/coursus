@@ -6,6 +6,7 @@ public class Data {
     //datos para usuarios
     private static ArrayList<Usuario> usuarios = new ArrayList();
 
+
     public static void guardarU(Usuario u){
         usuarios.add(u);
     }
@@ -13,6 +14,7 @@ public class Data {
     public static ArrayList<Usuario> obtenerU(){
         return usuarios;
     }
+
 
     public static void eliminarU(Usuario p){
         for (int i = 0; i < usuarios.size(); i++) {

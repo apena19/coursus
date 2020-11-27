@@ -56,8 +56,8 @@
 
         <ImageView
             android:id="@+id/imgFotoDetalleU"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:layout_width="210dp"
+            android:layout_height="167dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="15sp"
             app:srcCompat="@drawable/persona" />
@@ -163,5 +163,12 @@
             </TableRow>
 
         </TableLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listCursosUser"
+            android:layout_width="match_parent"
+            android:layout_height="208dp"
+            android:layout_marginTop="20sp" />
+
     </LinearLayout>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

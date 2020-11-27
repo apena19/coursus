@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Coursus</string>
+    <string name="action_settings">Settings</string>
+    <string name="lbl_admin_panel">Administration panel</string>
+    <string name="btn_panel_user">Manage Users</string>
+    <string name="btn_panel_cursos">Manage Courses</string>
+    <string name="btn_asignar_curso">Assign Courses</string>
+    <string name="title_activity_user_activitay">User Activitay</string>
+    <string name="title_activity_detalle_usuario">User_Detail</string>
+    <string name="detalle_usuario">User Detail</string>
+    <string name="lbl_nombre">Name</string>
+    <string name="lbl_apellido">Last name</string>
+    <string name="lbl_cedula">Identification card</string>
+    <string name="lbl_celular">Cell phone</string>
+    <string name="lbl_titulo_agregar_user">Create New User</string>
+    <string name="lbl_guardar">Save</string>
+    <string name="lbl_limpiar">Clear</string>
+    <string name="lbl_Cancelar">Cancel</string>
+    <string name="mensaje_correcto">Item Saved Correctly</string>
+    <string name="titulo_eliminar_usuario">Delete user</string>
+    <string name="mensaje_eliminr_user">Are you sure to delete this user?</string>
+    <string name="opcion_si">yes</string>
+    <string name="opcion_no">No</string>
+    <string name="title_activity_curso">Course</string>
+    <string name="title_activity_detalle_curso">DetailCourse</string>
+    <string name="detalle_curso">Course Detail</string>
+    <string name="lbl_categoria">Category</string>
+    <string name="lbl_duracion">Duration</string>
+    <string name="lbl_titulo_agregar_curso">Create New Course</string>
+    <string name="categoria_desarrollo">Software development</string>
+    <string name="categoria_diseno">Web design</string>
+    <string name="categoria_contabilidad">Accounting</string>
+    <string name="categoria_ingles">English</string>
+    <string name="lbl_titulo_comprar">Course Store</string>
+    <string name="seleccionDefould">Select a course</string>
+</resources>
